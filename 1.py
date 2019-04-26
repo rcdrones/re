@@ -133,13 +133,15 @@ def my_fun():
 
 
 
-##key = r"Smart UPS Ver2.0,V111,B2222,O333,C45"
+key = r"Smart UPS Ver2.0,V512,B2222,O333,C45"
 ##p1 = r"Ver\d.\d"
-##p1 = r"V\d+"
+p1 = r"(?<=V)\d+"
 ##p1 = r"B\d+"
 ##p1 = r"O\d+"
 ##p1 = r"C\d+"
-##my_fun()
+pattern1 = re.compile(p1)
+match1 = re.search(pattern1 , key)
+print(1+int(match1.group(0)))
 
 
 
